@@ -35,7 +35,9 @@ export class LoginComponent implements OnInit {
           showConfirmButton: false,
           timer: 1000
         });
-        this.router.navigate(['home']);
+        setTimeout(() => {   
+          this.router.navigate(['home']);
+        }, 1000);
       },
       error: (error) => {
         swal.fire({
