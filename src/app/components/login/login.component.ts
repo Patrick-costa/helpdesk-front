@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Credenciais } from 'src/app/models/credenciais';
+import { ToastrService } from 'ngx-toastr';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +11,8 @@ import { Credenciais } from 'src/app/models/credenciais';
 })
 export class LoginComponent implements OnInit {
 
+  constructor() { }
+
   creds: Credenciais = {
     email: '',
     senha: ''
@@ -16,16 +20,22 @@ export class LoginComponent implements OnInit {
 
   email = new FormControl(null, Validators.email);
   senha = new FormControl(null, Validators.minLength(3));
-  constructor() { }
 
   ngOnInit(): void {
   }
 
+  logar(){
+    swal.fire({
+      icon: 'error',
+      title: 'Login',
+      text: 'Usuario ou senha incorretos',
+      showConfirmButton: false,
+      timer: 1000
+    });
+    this.creds.senha = '';
+  }
+
   validaCampos(): boolean{
-    if(this.email.valid && this.senha.valid){
-      return true;
-    } else {
-      return false;
-    }
+    return this.email.valid && this.senha.valid;
   }
 }

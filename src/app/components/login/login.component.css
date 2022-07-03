@@ -1,17 +1,20 @@
 .container{
-    height: 100%;
+    height: 100vh;
     background: linear-gradient(180deg, rgba(0,4,36,1) 0%, rgba(32,139,213,1) 0%, rgba(32,139,213,1) 40%, rgba(0,212,255,1) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    overflow: hidden;
 }
 
 .form{
     width: 30rem;
-    margin: 0auto;
+    margin: 0 auto;
     background-color: rgb(235, 235, 235);
     padding: 4rem 1rem;
     border-radius: 1rem;
+    overflow: hidden;
 
 }
 
