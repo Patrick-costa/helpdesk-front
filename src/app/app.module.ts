@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
         progressBar: true,
       }
     ),
+    NgxMaskModule.forRoot(),
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

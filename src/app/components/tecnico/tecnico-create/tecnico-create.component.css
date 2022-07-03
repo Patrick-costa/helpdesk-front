@@ -23,3 +23,7 @@ img{
     display: flex;
     justify-content: space-between;
 }
+
+mat-icon{
+    opacity: 0.6;
+}
