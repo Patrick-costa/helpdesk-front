@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Chamado } from 'src/app/models/chamado';
 import { Cliente } from 'src/app/models/cliente';
 import { Tecnico } from 'src/app/models/tecnico';
@@ -38,15 +38,24 @@ export class ChamadoUpdateComponent implements OnInit {
   constructor(private clienteService: ClienteService,
               private tecnicoService: TecnicoService,
               private chamadoService: ChamadoService,
-              private router: Router) { }
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.chamado.id = this.route.snapshot.params['id'];
+    this.findById();
     this.findAllClientes();
     this.findAllTecnicos();
   }
 
-  create(): void{
-    this.chamadoService.create(this.chamado).subscribe({
+  findById(): void{
+    this.chamadoService.findById(this.chamado.id).subscribe(x => {
+      this.chamado = x;
+    })
+  }
+
+  update(): void{
+    this.chamadoService.update(this.chamado).subscribe({
       next: (resposta) => {
         this.router.navigate(['chamados']);
         swal.fire({
@@ -87,5 +96,24 @@ export class ChamadoUpdateComponent implements OnInit {
     this.tecnico.valid && this.cliente.valid;
   }
 
+  retornaStatus(status: any){
+    if(status == '0'){
+      return 'ABERTO'
+    } else if(status =='1'){
+      return 'EM ANDAMENTO'
+    } else {
+      return 'ENCERRADO'
+    }
+  }
+
+  retornaPrioridade(status: any){
+    if(status == '0'){
+      return 'BAIXA'
+    } else if(status =='1'){
+      return 'MEDIA'
+    } else {
+      return 'ALTA'
+    }
+  }
 
 }

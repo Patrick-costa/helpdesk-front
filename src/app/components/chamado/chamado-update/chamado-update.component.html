@@ -17,15 +17,16 @@
 
       <div class="status-prioridade">
         <mat-form-field appearance="outline">
-            <mat-label>Selecione um status</mat-label>
+            <mat-label>{{retornaStatus(chamado.status)}}</mat-label>
             <mat-select [formControl]="status" required [(ngModel)]="chamado.status">
               <mat-option value="0">Aberto</mat-option>
               <mat-option value="1">Em andamento</mat-option>
               <mat-option value="2">Encerrado</mat-option>
             </mat-select>
           </mat-form-field>
+
           <mat-form-field appearance="outline">
-            <mat-label>Selecione uma prioridade</mat-label>
+            <mat-label>{{retornaPrioridade(chamado.prioridade)}}</mat-label>
             <mat-select [formControl]="prioridade" required [(ngModel)]="chamado.prioridade">
               <mat-option value="0">Baixa</mat-option>
               <mat-option value="1">Média</mat-option>
@@ -36,7 +37,7 @@
 
       <div class="tecnico">
         <mat-form-field appearance="outline" class="fullWidth">
-            <mat-label>Selecione um técnico</mat-label>
+            <mat-label>{{chamado.nomeTecnico}}</mat-label>
             <mat-select [formControl]="status" required [(ngModel)]="chamado.tecnico">
                 <mat-option *ngFor="let tec of tecnicos" value="{{tec.id}}">{{tec.nome}}</mat-option>
               </mat-select>
@@ -45,7 +46,7 @@
 
       <div class="cliente">
         <mat-form-field appearance="outline" class="fullWidth">
-            <mat-label>Selecione um cliente</mat-label>
+            <mat-label>{{chamado.nomeCliente}}</mat-label>
             <mat-select [formControl]="cliente" required [(ngModel)]="chamado.cliente">
               <mat-option *ngFor="let cli of clientes" value="{{cli.id}}">{{cli.nome}}</mat-option>
             </mat-select>
@@ -59,7 +60,7 @@
         </mat-form-field>
       </form>
 
-      <button (click)="create()" class="fullWidth" mat-raised-button color="primary">Atualizar</button>
+      <button (click)="update()" class="fullWidth" mat-raised-button color="primary">Atualizar</button>
       <br><br>
       <button routerLink="../" class="fullWidth" mat-stroked-button color="warn">Cancelar</button>
     </div>
