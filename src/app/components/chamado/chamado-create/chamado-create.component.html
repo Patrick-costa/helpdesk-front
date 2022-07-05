@@ -1,1 +1,60 @@
-<p>chamado-create works!</p>
+<div class="container mat-elevation-z8">
+    <h1 class="fullWidth">Criando chamado</h1>
+    <img class="fullWidth" src="../../../../assets/img/undraw_solution_mindset_re_57bf.svg" alt="Criando chamado">
+
+    <form class="form">
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>Titutlo do chamado</mat-label>
+          <input matInput placeholder="Ex. Trocar bateria">
+        </mat-form-field>
+        
+      </form>
+
+      <div class="status-prioridade">
+        <mat-form-field appearance="outline">
+            <mat-label>Selecione um status</mat-label>
+            <mat-select>
+              <mat-option value="0">Aberto</mat-option>
+              <mat-option value="1">Em andamento</mat-option>
+              <mat-option value="2">Encerrado</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Selecione uma prioridade</mat-label>
+            <mat-select>
+              <mat-option value="0">Baixa</mat-option>
+              <mat-option value="1">Média</mat-option>
+              <mat-option value="2">Alta</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+
+      <div class="tecnico">
+        <mat-form-field appearance="outline" class="fullWidth">
+            <mat-label>Selecione um técnico</mat-label>
+            <mat-select>
+              <mat-option value="0">Patrick</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+
+      <div class="cliente">
+        <mat-form-field appearance="outline" class="fullWidth">
+            <mat-label>Selecione um cliente</mat-label>
+            <mat-select>
+              <mat-option value="0">Patrick</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+
+      <form class="form">
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>Descricao</mat-label>
+          <textarea class="descricao" matInput placeholder="Ex. It makes me feel..."></textarea>
+        </mat-form-field>
+      </form>
+
+      <button class="fullWidth" mat-raised-button color="primary">Adicionar</button>
+      <br><br>
+      <button class="fullWidth" mat-stroked-button color="warn">Cancelar</button>
+    </div>
