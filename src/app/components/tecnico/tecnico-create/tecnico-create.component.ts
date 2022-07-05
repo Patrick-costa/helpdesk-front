@@ -37,7 +37,6 @@ export class TecnicoCreateComponent implements OnInit {
       this.service.create(this.tecnico).subscribe({
         next: (resposta) => {
           this.router.navigate(['tecnicos']);
-          console.log(resposta)
           swal.fire({
             icon: 'success',
             title: 'Cadastrado com sucesso!',
