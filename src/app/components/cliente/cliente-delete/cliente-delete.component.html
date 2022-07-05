@@ -1,0 +1,61 @@
+<div class="container mat-elevation-z8">
+    <form action="" class="form">
+        <h1 class="fullWidth">Deletar cliente</h1>
+        <img class="fullWidth" src="../../../../assets/img/undraw_my_password_re_ydq7 (1).svg" alt="imagem de cadastro">
+        <p>
+            <mat-form-field claappearance="legacy" class="fullWidth">
+                <mat-label>Nome</mat-label>
+                <input 
+                name="nome"
+                [(ngModel)]="cliente.nome"
+                [disabled]="true"
+                required
+                matInput 
+                placeholder="Ex: Patrick Araujo">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy" class="fullWidth">
+                <mat-label>CPF</mat-label>
+                <input 
+                name="cpf"
+                [(ngModel)]="cliente.cpf"
+                [disabled]="true"
+                matInput 
+                placeholder="Ex: 000.000.000-00"
+                mask="000.000.000-00"
+                >
+                <mat-icon matSuffix>pin</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy" class="fullWidth">
+                <mat-label>Email</mat-label>
+                <input 
+                name="email"
+                [(ngModel)]="cliente.email"
+                [disabled]="true"
+                matInput 
+                placeholder="Ex: patrick@gmail.com">
+                <mat-icon matSuffix>email</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy" class="fullWidth">
+                <mat-label>Senha</mat-label>
+                <input
+                name="senha"
+                [(ngModel)]="cliente.senha"
+                [disabled]="true"
+                type="password"
+                 matInput>
+                <mat-icon matSuffix>password</mat-icon>
+            </mat-form-field>
+        </p>
+
+        <button (click)="deleteUser()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Deletar</button>
+        <br><br>
+        <button routerLink="../../" class="fullWidth mat-elevation-z4" mat-stroked-button color="accent">Cancelar</button>
+    </form>
+</div>
