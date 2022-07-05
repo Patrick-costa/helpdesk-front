@@ -25,7 +25,10 @@ const routes: Routes = [
       },
       {
         path: 'tecnicos/update/:id', component: TecnicoUpdateComponent
-      }
+      },
+      {
+        path: 'tecnicos/delete/:id', component: TecnicoUpdateComponent
+      },
     ]
   },
 
