@@ -10,12 +10,11 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 import swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-chamado-create',
-  templateUrl: './chamado-create.component.html',
-  styleUrls: ['./chamado-create.component.css']
+  selector: 'app-chamado-update',
+  templateUrl: './chamado-update.component.html',
+  styleUrls: ['./chamado-update.component.css']
 })
-export class ChamadoCreateComponent implements OnInit {
-
+export class ChamadoUpdateComponent implements OnInit {
   clientes: Cliente[] = [];
   tecnicos: Tecnico[] = []
   chamado: Chamado = {
